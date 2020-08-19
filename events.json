@@ -1,0 +1,51 @@
+{
+  "past": [
+    {
+      "start_date": "2020-08-13 18:00:00",
+      "end_date": "2020-08-13 20:00:00",
+      "topic_label": "Parser combinators in ReasonML (part 1)",
+      "description": "Implement a (simple) parser combinators library in ReasonML",
+      "vod": "https://youtu.be/OhmsTLtwLY4"
+    },
+    {
+      "start_date": "2020-08-06 18:00:00",
+      "end_date": "2020-08-06 20:00:00",
+      "topic_label": "Open Source development with Rust",
+      "topic_url": "https://github.com/Huemul/subilo",
+      "description": "Fixing TODOs on [Subilo](https://subilo.io) ([github.com/Huemul/subilo](https://github.com/Huemul/subilo))",
+      "vod": "https://youtu.be/7xW9HFg_nA8"
+    },
+    {
+      "start_date": "2020-07-30 18:00:00",
+      "end_date": "2020-07-30 20:00:00",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "topic_url": "https://github.com/gillchristian/docs-ts-extra",
+      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)",
+      "vod": "https://youtu.be/Hoy8F7yUYRE"
+    },
+    {
+      "start_date": "2020-07-23 18:00:00",
+      "end_date": "2020-07-23 20:00:00",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "topic_url": "https://github.com/gillchristian/docs-ts-extra",
+      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)",
+      "vod": "https://youtu.be/e5P91qrdibc"
+    }
+  ],
+  "future": [
+    {
+      "start_date": "2020-08-20 18:00:00",
+      "topic_label": "Parser combinators in ReasonML (part 2)",
+      "description": "Implement a (simple) parser combinators library in ReasonML"
+    },
+    {
+      "start_date": "2020-08-20 18:00:00"
+    },
+    {
+      "start_date": "2020-08-27 18:00:00"
+    },
+    {
+      "start_date": "2020-09-03 18:00:00"
+    }
+  ]
+}
