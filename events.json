@@ -1,8 +1,24 @@
 {
   "past": [
     {
+      "start_date": "2020-09-17 18:00:00",
+      "end_date": "2020-09-17 18:00:00",
+      "topic_label": "Learning PureScript (part 4)",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
+      "vod": "https://youtu.be/pMTRvCYjC98"
+    },
+    {
+      "start_date": "2020-09-10 18:00:00",
+      "end_date": "2020-09-10 20:00:00",
+      "topic_label": "Learning PureScript (part 3)",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
+      "vod": "https://youtu.be/LSOjn6KwRow"
+    },
+    {
       "start_date": "2020-09-03 18:00:00",
-      "end_date": "2020-09-03 18:00:00",
+      "end_date": "2020-09-03 20:00:00",
       "topic_label": "Learning PureScript (part 2)",
       "topic_url": "https://github.com/gillchristian/learning-purescript",
       "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
@@ -56,13 +72,10 @@
   ],
   "future": [
     {
-      "start_date": "2020-09-10 18:00:00"
-    },
-    {
-      "start_date": "2020-09-17 18:00:00"
-    },
-    {
       "start_date": "2020-09-24 18:00:00"
+    },
+    {
+      "start_date": "2020-10-15 18:00:00"
     }
   ]
 }
