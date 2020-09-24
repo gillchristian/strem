@@ -1,6 +1,14 @@
 {
   "past": [
     {
+      "start_date": "2020-09-24 18:00:00",
+      "end_date": "2020-09-24 20:00:00",
+      "topic_label": "Haskell, GitHub Actions and then some",
+      "topic_url": "https://github.com/Bansco/webout-server",
+      "description": "Building a Haskell app with [GitHub Actions](https://github.com/features/actions) and deploy it with [Subilo](htts://subilo.io)",
+      "vod": "https://youtu.be/5L_o-UcypnU"
+    },
+    {
       "start_date": "2020-09-20 18:00:00",
       "end_date": "2020-09-20 20:00:00",
       "topic_label": "Learning PureScript (part 5)",
@@ -80,9 +88,10 @@
   ],
   "future": [
     {
-      "start_date": "2020-09-24 18:00:00",
-      "topic_label": "Haskell, GitHub Actions and then some",
-      "description": "Figuring out how to build and Haskell with [GitHub Actions](https://github.com/features/actions)"
+      "start_date": "2020-10-13 18:00:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://simonmar.github.io/pages/pcph.html",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
       "start_date": "2020-10-15 18:00:00"
