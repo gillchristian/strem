@@ -89,9 +89,9 @@
   "future": [
     {
       "start_date": "2020-10-13 18:00:00",
-      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
-      "topic_url": "https://simonmar.github.io/pages/pcph.html",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "topic_url": "https://github.com/gillchristian/docs-ts-extra",
+      "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)"
     },
     {
       "start_date": "2020-10-15 18:00:00"
