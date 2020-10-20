@@ -1,6 +1,13 @@
 {
   "past": [
     {
+      "start_date": "2020-10-20 18:00:00",
+      "end_date": "2020-10-20 20:10:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://simonmar.github.io/pages/pcph.html",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
+    },
+    {
       "start_date": "2020-10-15 18:00:00",
       "end_date": "2020-10-15 20:00:00",
       "topic_label": "fp-ts typeclasses in TypeScript",
@@ -104,16 +111,16 @@
   ],
   "future": [
     {
-      "start_date": "2020-10-20 18:00:00",
-      "topic_label": "Book day: Haskell book study session with Mona Lux",
-      "topic_url": "https://haskellbook.com/",
-      "description": "Study session where we go together through the chapter exercises of [Haskell Programming From First Principles](https://haskellbook.com/)"
+      "start_date": "2020-10-22 18:00:00",
+      "topic_label": "fp-ts typeclasses in TypeScript",
+      "topic_url": "https://gcanti.github.io/fp-ts/guides/HKT.html",
+      "description": "Implement [RemoteData](https://package.elm-lang.org/packages/krisajenkins/remotedata/latest/RemoteData) and other typeclasses in [fp-ts](https://gcanti.github.io/fp-ts)"
     },
     {
-      "start_date": "2020-10-22 18:00:00"
-    },
-    {
-      "start_date": "2020-10-27 18:00:00"
+      "start_date": "2020-10-27 18:00:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://simonmar.github.io/pages/pcph.html",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
       "start_date": "2020-10-29 18:00:00"
