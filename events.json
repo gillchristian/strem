@@ -1,11 +1,19 @@
 {
   "past": [
     {
+      "start_date": "2020-10-22 18:00:00",
+      "end_date": "2020-10-22 20:10:00",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "topic_url": "https://github.com/gillchristian/docs-ts-extra/pull/5",
+      "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)"
+    },
+    {
       "start_date": "2020-10-20 18:00:00",
       "end_date": "2020-10-20 20:10:00",
       "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://simonmar.github.io/pages/pcph.html",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)",
+      "vod": "https://youtu.be/HZVxxxmTyYA"
     },
     {
       "start_date": "2020-10-15 18:00:00",
@@ -111,19 +119,25 @@
   ],
   "future": [
     {
-      "start_date": "2020-10-22 18:00:00",
-      "topic_label": "fp-ts typeclasses in TypeScript",
-      "topic_url": "https://gcanti.github.io/fp-ts/guides/HKT.html",
-      "description": "Implement [RemoteData](https://package.elm-lang.org/packages/krisajenkins/remotedata/latest/RemoteData) and other typeclasses in [fp-ts](https://gcanti.github.io/fp-ts)"
-    },
-    {
       "start_date": "2020-10-27 18:00:00",
       "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://simonmar.github.io/pages/pcph.html",
       "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-10-29 18:00:00"
+      "start_date": "2020-10-29 18:00:00",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "topic_url": "https://github.com/gillchristian/docs-ts-extra",
+      "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)"
+    },
+    {
+      "start_date": "2020-11-03 18:00:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://simonmar.github.io/pages/pcph.html",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
+    },
+    {
+      "start_date": "2020-11-05 18:00:00"
     }
   ]
 }
