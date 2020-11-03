@@ -1,6 +1,26 @@
 {
   "past": [
     {
+      "start_date": "2020-11-03 19:10:00",
+      "end_date": "2020-11-03 21:40:00",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
+    },
+    {
+      "start_date": "2020-10-29 19:00:00",
+      "end_date": "2020-10-29 21:00:00",
+      "topic_label": "Tailwind classes for PureScript",
+      "topic_url": "https://discourse.purescript.org/t/typed-css-with-tailwind/1422"
+    },
+    {
+      "start_date": "2020-10-27 19:00:00",
+      "end_date": "2020-10-27 21:00:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://github.com/gillchristian/parallel-concurrent",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)",
+      "vod": "https://youtu.be/pHhoSyfNlwU"
+    },
+    {
       "start_date": "2020-10-22 18:00:00",
       "end_date": "2020-10-22 20:10:00",
       "topic_label": "TypeScript docs generator (with fp-ts)",
@@ -119,23 +139,18 @@
   ],
   "future": [
     {
-      "start_date": "2020-10-27 18:00:00",
+      "start_date": "2020-11-05 19:00:00",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "description": "Let's build a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list."
+    },
+    {
+      "start_date": "2020-11-10 19:00:00",
       "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
       "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-10-29 18:00:00",
-      "topic_label": "PureScript"
-    },
-    {
-      "start_date": "2020-11-03 18:00:00",
-      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
-      "topic_url": "https://github.com/gillchristian/parallel-concurrent",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
-    },
-    {
-      "start_date": "2020-11-05 18:00:00"
+      "start_date": "2020-11-02 19:00:00"
     }
   ]
 }
