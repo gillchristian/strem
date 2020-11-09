@@ -1,9 +1,23 @@
 {
   "past": [
     {
+      "start_date": "2020-11-09 20:15:00",
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "topic_url": "https://github.com/gillchristian/parallel-concurrent",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
+    },
+    {
+      "start_date": "2020-11-05 19:00:00",
+      "end_date": "2020-11-05 21:10:00",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "topic_url": "https://github.com/gillchristian/fpers",
+      "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
+    },
+    {
       "start_date": "2020-11-03 19:10:00",
       "end_date": "2020-11-03 21:40:00",
       "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "topic_url": "https://github.com/gillchristian/fpers",
       "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
     },
     {
@@ -139,18 +153,19 @@
   ],
   "future": [
     {
-      "start_date": "2020-11-05 19:00:00",
-      "topic_label": "PureScript: a Twitch dashboard with Halogen",
-      "description": "Let's build a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list."
+      "start_date": "2020-11-11 19:00:00",
+      "topic_label": "Pair programming a Solidity comments extractor",
+      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joins me to pair program. We'll work on a tool to extract comments from Solidity smart contracts."
     },
     {
-      "start_date": "2020-11-10 19:00:00",
+      "start_date": "2020-11-17 19:00:00",
       "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
       "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-11-02 19:00:00"
+      "start_date": "2020-11-19 19:00:00",
+      "topic_label": "PureScript"
     }
   ]
 }
