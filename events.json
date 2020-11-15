@@ -1,7 +1,15 @@
 {
   "past": [
     {
+      "start_date": "2020-11-11 19:00:00",
+      "end_date": "2020-11-11 21:50:00",
+      "topic_label": "Pair programming a Solidity comments extractor",
+      "topic_url": "https://github.com/fvictorio/solidity-comments-extractor/pull/1",
+      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joined to pair program on a tool to extract comments from Solidity smart contracts."
+    },
+    {
       "start_date": "2020-11-09 20:15:00",
+      "end_date": "2020-11-09 22:00:00",
       "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
       "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
@@ -153,9 +161,10 @@
   ],
   "future": [
     {
-      "start_date": "2020-11-11 19:00:00",
+      "start_date": "2020-11-15 19:00:00",
       "topic_label": "Pair programming a Solidity comments extractor",
-      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joins me to pair program. We'll work on a tool to extract comments from Solidity smart contracts."
+      "topic_url": "https://github.com/fvictorio/solidity-comments-extractor/pull/1",
+      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joins me to continue pair programming the Solidity smart contracts extractor."
     },
     {
       "start_date": "2020-11-17 19:00:00",
