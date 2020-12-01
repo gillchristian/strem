@@ -1,6 +1,13 @@
 {
   "past": [
     {
+      "start_date": "2020-12-01 19:00:00",
+      "end_date": "2020-12-01 21:00:00",
+      "topic_label": "Haskell CLI",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
       "start_date": "2020-11-26 19:00:00",
       "end_date": "2020-11-26 21:40:00",
       "topic_label": "Haskell parser combinators: parsing CSS",
@@ -199,9 +206,7 @@
   ],
   "future": [
     {
-      "start_date": "2020-12-01 19:00:00"
-    },
-    {
+      "topic_label": "PureScript",
       "start_date": "2020-12-03 19:00:00"
     },
     {
