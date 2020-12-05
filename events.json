@@ -1,6 +1,11 @@
 {
   "past": [
     {
+      "start_date": "2020-12-03 19:00:00",
+      "end_date": "2020-12-03 21:00:00",
+      "topic_label": "Learning Nix for the first time"
+    },
+    {
       "start_date": "2020-12-01 19:00:00",
       "end_date": "2020-12-01 21:00:00",
       "topic_label": "Haskell CLI",
@@ -205,10 +210,6 @@
     }
   ],
   "future": [
-    {
-      "topic_label": "PureScript",
-      "start_date": "2020-12-03 19:00:00"
-    },
     {
       "start_date": "2020-12-08 19:00:00"
     },
