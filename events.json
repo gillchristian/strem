@@ -1,6 +1,32 @@
 {
   "past": [
     {
+      "start_date": "2020-12-17 19:00:00",
+      "end_date": "2020-12-17 21:00:00",
+      "topic_label": "Haskell CLI",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "start_date": "2020-12-15 19:00:00",
+      "end_date": "2020-12-15 21:30:00",
+      "topic_label": "Haskell CLI",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "start_date": "2020-12-10 19:00:00",
+      "end_date": "2020-12-10 21:15:00",
+      "topic_label": "Advent of Code day 09 in Haskell",
+      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day09.hs"
+    },
+    {
+      "start_date": "2020-12-08 19:00:00",
+      "end_date": "2020-12-08 21:15:00",
+      "topic_label": "Advent of Code day 08 in Haskell",
+      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day08.hs"
+    },
+    {
       "start_date": "2020-12-03 19:00:00",
       "end_date": "2020-12-03 21:00:00",
       "topic_label": "Learning Nix for the first time"
@@ -211,16 +237,12 @@
   ],
   "future": [
     {
-      "start_date": "2020-12-08 19:00:00"
+      "start_date": "2020-12-22 13:00:00",
+      "topic_label": "PureScript Halogen"
     },
     {
-      "start_date": "2020-12-10 19:00:00"
-    },
-    {
-      "start_date": "2020-12-15 19:00:00"
-    },
-    {
-      "start_date": "2020-12-17 19:00:00"
+      "start_date": "2020-12-23 13:00:00",
+      "topic_label": "PureScript Halogen"
     }
   ]
 }
