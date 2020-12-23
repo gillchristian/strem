@@ -1,6 +1,16 @@
 {
   "past": [
     {
+      "start_date": "2020-12-23 13:30:00",
+      "end_date": "2020-12-23 15:50:00",
+      "topic_label": "Frontend app with PureScript Halogen"
+    },
+    {
+      "start_date": "2020-12-22 19:30:00",
+      "end_date": "2020-12-22 21:30:00",
+      "topic_label": "Frontend app with PureScript Halogen"
+    },
+    {
       "start_date": "2020-12-17 19:00:00",
       "end_date": "2020-12-17 21:00:00",
       "topic_label": "Haskell CLI",
@@ -237,11 +247,15 @@
   ],
   "future": [
     {
-      "start_date": "2020-12-22 19:00:00",
+      "start_date": "2020-12-28 13:00:00",
       "topic_label": "PureScript Halogen"
     },
     {
-      "start_date": "2020-12-23 13:00:00",
+      "start_date": "2020-12-29 13:00:00",
+      "topic_label": "PureScript Halogen"
+    },
+    {
+      "start_date": "2020-12-30 13:00:00",
       "topic_label": "PureScript Halogen"
     }
   ]
