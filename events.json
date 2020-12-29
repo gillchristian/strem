@@ -1,6 +1,13 @@
 {
   "past": [
     {
+      "start_date": "2020-12-29 13:45:00",
+      "end_date": "2020-12-29 16:50:00",
+      "topic_label": "Haskell CLI",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
       "start_date": "2020-12-23 13:30:00",
       "end_date": "2020-12-23 15:50:00",
       "topic_label": "Frontend app with PureScript Halogen"
@@ -246,10 +253,6 @@
     }
   ],
   "future": [
-    {
-      "start_date": "2020-12-29 13:00:00",
-      "topic_label": "PureScript Halogen"
-    },
     {
       "start_date": "2020-12-30 13:00:00",
       "topic_label": "PureScript Halogen"
