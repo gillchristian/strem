@@ -1,6 +1,23 @@
 {
   "past": [
     {
+      "start_date": "2021-01-21 19:00:00",
+      "end_date": "2021-01-21 21:40:00",
+      "topic_label": "Frontend app with PureScript Halogen"
+    },
+    {
+      "start_date": "2021-01-19 19:00:00",
+      "end_date": "2021-01-19 21:00:00",
+      "topic_label": "Frontend app with PureScript Halogen"
+    },
+    {
+      "start_date": "2021-01-14 19:00:00",
+      "end_date": "2021-01-14 21:00:00",
+      "topic_label": "Implement the Reader and Writer Monad",
+      "topic_url": "https://github.com/gillchristian/state-reader-writer",
+      "description": "We solved the exercises from [@williamyaoh](https://twitter.com/williamyaoh)'s articles: [Deriving The Reader Monad From First Principles](https://williamyaoh.com/posts/2020-07-19-deriving-reader-monad.html) &  [Deriving The Writer Monad From First Principles](https://williamyaoh.com/posts/2020-07-26-deriving-writer-monad.html)."
+    },
+    {
       "start_date": "2021-01-12 19:00:00",
       "end_date": "2021-01-12 21:00:00",
       "topic_label": "Implement the State Monad",
@@ -266,10 +283,12 @@
   ],
   "future": [
     {
-      "start_date": "2021-01-14 19:00:00",
-      "topic_label": "Implement the Reader and Writer Monad",
-      "topic_url": "https://github.com/gillchristian/state-reader-writer",
-      "description": "We'll work on the exercises from [@williamyaoh](https://twitter.com/williamyaoh)'s articles: [Deriving The Reader Monad From First Principles](https://williamyaoh.com/posts/2020-07-19-deriving-reader-monad.html) &  [Deriving The Writer Monad From First Principles](https://williamyaoh.com/posts/2020-07-26-deriving-writer-monad.html)."
+      "start_date": "2021-01-26 19:00:00",
+      "topic_label": "Frontend app with PureScript Halogen"
+    },
+    {
+      "start_date": "2021-01-28 19:00:00",
+      "topic_label": "Frontend app with PureScript Halogen"
     }
   ]
 }
