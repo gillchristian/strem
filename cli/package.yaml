@@ -1,0 +1,46 @@
+name:                cli
+version:             0.1.0.0
+github:              "gillchristian/strem"
+license:             MIT
+author:              "gillchristian"
+copyright:           "2021 Christian Gill"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/gillchristian/strem/cli#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- bytestring
+- lens
+- lens-aeson
+- optparse-applicative
+- text
+- wreq
+
+library:
+  source-dirs: src
+
+executables:
+  strem:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cli
+
+tests:
+  cli-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cli
