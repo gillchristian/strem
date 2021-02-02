@@ -1,294 +1,363 @@
 {
   "past": [
     {
-      "start_date": "2021-01-21 19:00:00",
+      "end_date": "2021-02-02 22:00:00",
+      "topic_url": "https://github.com/gillchristian/strem/cli",
+      "topic_label": "CLI to automate my stream schedule",
+      "start_date": "2021-02-02 19:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
+      "end_date": "2021-01-29 16:00:00",
+      "topic_url": null,
+      "topic_label": "Hackathon at !work",
+      "start_date": "2021-01-29 8:00:00",
+      "vod": null,
+      "description": "Worked on a wrapper for [docs-ts](https://github.com/gcanti/docs-ts) that adds support for [MkDocs](https://www.mkdocs.org/)"
+    },
+    {
+      "end_date": "2021-01-28 16:30:00",
+      "topic_url": null,
+      "topic_label": "Hackathon at !work",
+      "start_date": "2021-01-28 10:00:00",
+      "vod": null,
+      "description": "Worked on a wrapper for [docs-ts](https://github.com/gcanti/docs-ts) that adds support for [MkDocs](https://www.mkdocs.org/)"
+    },
+    {
+      "end_date": "2021-01-26 21:00:00",
+      "topic_url": null,
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-01-26 19:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
       "end_date": "2021-01-21 21:40:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": null,
+      "topic_label": "Frontend app with PureScript Halogen",
+      "start_date": "2021-01-21 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2021-01-19 19:00:00",
       "end_date": "2021-01-19 21:00:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": null,
+      "topic_label": "Frontend app with PureScript Halogen",
+      "start_date": "2021-01-19 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2021-01-14 19:00:00",
       "end_date": "2021-01-14 21:00:00",
-      "topic_label": "Implement the Reader and Writer Monad",
       "topic_url": "https://github.com/gillchristian/state-reader-writer",
+      "topic_label": "Implement the Reader and Writer Monad",
+      "start_date": "2021-01-14 19:00:00",
+      "vod": null,
       "description": "We solved the exercises from [@williamyaoh](https://twitter.com/williamyaoh)'s articles: [Deriving The Reader Monad From First Principles](https://williamyaoh.com/posts/2020-07-19-deriving-reader-monad.html) &  [Deriving The Writer Monad From First Principles](https://williamyaoh.com/posts/2020-07-26-deriving-writer-monad.html)."
     },
     {
-      "start_date": "2021-01-12 19:00:00",
       "end_date": "2021-01-12 21:00:00",
-      "topic_label": "Implement the State Monad",
       "topic_url": "https://github.com/gillchristian/state-reader-writer",
+      "topic_label": "Implement the State Monad",
+      "start_date": "2021-01-12 19:00:00",
+      "vod": null,
       "description": "We solved the exercises from [@williamyaoh](https://twitter.com/williamyaoh)'s article: [Deriving The State Monad From First Principles](https://williamyaoh.com/posts/2020-07-12-deriving-state-monad.html)."
     },
     {
-      "start_date": "2020-12-30 14:00:00",
       "end_date": "2020-12-30 16:50:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": null,
+      "topic_label": "Frontend app with PureScript Halogen",
+      "start_date": "2020-12-30 14:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-29 13:45:00",
       "end_date": "2020-12-29 16:50:00",
-      "topic_label": "Haskell CLI",
       "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "topic_label": "Haskell CLI",
+      "start_date": "2020-12-29 13:45:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-12-23 13:30:00",
       "end_date": "2020-12-23 15:50:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": null,
+      "topic_label": "Frontend app with PureScript Halogen",
+      "start_date": "2020-12-23 13:30:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-22 19:30:00",
       "end_date": "2020-12-22 21:30:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": null,
+      "topic_label": "Frontend app with PureScript Halogen",
+      "start_date": "2020-12-22 19:30:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-17 19:00:00",
       "end_date": "2020-12-17 21:00:00",
-      "topic_label": "Haskell CLI",
       "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "topic_label": "Haskell CLI",
+      "start_date": "2020-12-17 19:00:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-12-15 19:00:00",
       "end_date": "2020-12-15 21:30:00",
-      "topic_label": "Haskell CLI",
       "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "topic_label": "Haskell CLI",
+      "start_date": "2020-12-15 19:00:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-12-10 19:00:00",
       "end_date": "2020-12-10 21:15:00",
+      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day09.hs",
       "topic_label": "Advent of Code day 09 in Haskell",
-      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day09.hs"
+      "start_date": "2020-12-10 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-08 19:00:00",
       "end_date": "2020-12-08 21:15:00",
+      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day08.hs",
       "topic_label": "Advent of Code day 08 in Haskell",
-      "topic_url": "https://github.com/gillchristian/advent-of-code/blob/master/2020/src/Day08.hs"
+      "start_date": "2020-12-08 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-03 19:00:00",
       "end_date": "2020-12-03 21:00:00",
-      "topic_label": "Learning Nix for the first time"
+      "topic_url": null,
+      "topic_label": "Learning Nix for the first time",
+      "start_date": "2020-12-03 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-12-01 19:00:00",
       "end_date": "2020-12-01 21:00:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
       "topic_label": "Haskell CLI",
-      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "start_date": "2020-12-01 19:00:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-11-26 19:00:00",
       "end_date": "2020-11-26 21:40:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-css",
       "topic_label": "Haskell parser combinators: parsing CSS",
-      "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "start_date": "2020-11-26 19:00:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-11-24 19:00:00",
       "end_date": "2020-11-24 21:00:00",
-      "topic_label": "Haskell: CLI & parser combinators",
       "topic_url": "https://github.com/gillchristian/tailwind-css",
+      "topic_label": "Haskell: CLI & parser combinators",
+      "start_date": "2020-11-24 19:00:00",
+      "vod": null,
       "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
     },
     {
-      "start_date": "2020-11-19 19:00:00",
       "end_date": "2020-11-19 21:00:00",
-      "topic_label": "PureScript: a Twitch dashboard with Halogen",
       "topic_url": "https://github.com/gillchristian/fpers",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "start_date": "2020-11-19 19:00:00",
+      "vod": null,
       "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
     },
     {
-      "start_date": "2020-11-17 19:00:00",
       "end_date": "2020-11-17 21:10:00",
-      "topic_label": "TypeScript docs generator (with fp-ts)",
       "topic_url": "https://github.com/gcanti/docs-ts",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "start_date": "2020-11-17 19:00:00",
+      "vod": null,
       "description": "Contribute to [docs-ts](https://github.com/gcanti/docs-ts) the fp-ts docs generator"
     },
     {
-      "start_date": "2020-11-15 19:00:00",
       "end_date": "2020-11-15 21:00:00",
-      "topic_label": "Pair programming a Solidity comments extractor",
       "topic_url": "https://github.com/fvictorio/solidity-comments-extractor/pull/1",
-      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joined to pair program on a tool to extract comments from Solidity smart contracts.",
-      "vod": "https://youtu.be/q7z_FEto-aA"
+      "topic_label": "Pair programming a Solidity comments extractor",
+      "start_date": "2020-11-15 19:00:00",
+      "vod": "https://youtu.be/q7z_FEto-aA",
+      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joined to pair program on a tool to extract comments from Solidity smart contracts."
     },
     {
-      "start_date": "2020-11-11 19:00:00",
       "end_date": "2020-11-11 21:50:00",
-      "topic_label": "Pair programming a Solidity comments extractor",
       "topic_url": "https://github.com/fvictorio/solidity-comments-extractor/pull/1",
-      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joined to pair program on a tool to extract comments from Solidity smart contracts.",
-      "vod": "https://youtu.be/ptLuYrKTadw"
+      "topic_label": "Pair programming a Solidity comments extractor",
+      "start_date": "2020-11-11 19:00:00",
+      "vod": "https://youtu.be/ptLuYrKTadw",
+      "description": "[@fvictorio_nan](https://twitter.com/fvictorio_nan) joined to pair program on a tool to extract comments from Solidity smart contracts."
     },
     {
-      "start_date": "2020-11-09 20:15:00",
       "end_date": "2020-11-09 22:00:00",
-      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)",
-      "vod": "https://youtu.be/2EYZ1F3r3aQ"
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "start_date": "2020-11-09 20:15:00",
+      "vod": "https://youtu.be/2EYZ1F3r3aQ",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-11-05 19:00:00",
       "end_date": "2020-11-05 21:10:00",
-      "topic_label": "PureScript: a Twitch dashboard with Halogen",
       "topic_url": "https://github.com/gillchristian/fpers",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "start_date": "2020-11-05 19:00:00",
+      "vod": null,
       "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
     },
     {
-      "start_date": "2020-11-03 19:10:00",
       "end_date": "2020-11-03 21:40:00",
-      "topic_label": "PureScript: a Twitch dashboard with Halogen",
       "topic_url": "https://github.com/gillchristian/fpers",
+      "topic_label": "PureScript: a Twitch dashboard with Halogen",
+      "start_date": "2020-11-03 19:10:00",
+      "vod": null,
       "description": "Building a dashboard to see who is streaming right now from the [Declarative Programming Streams](https://github.com/chiroptical/declarative-programming-streams) list"
     },
     {
-      "start_date": "2020-10-29 19:00:00",
       "end_date": "2020-10-29 21:00:00",
+      "topic_url": "https://discourse.purescript.org/t/typed-css-with-tailwind/1422",
       "topic_label": "Tailwind classes for PureScript",
-      "topic_url": "https://discourse.purescript.org/t/typed-css-with-tailwind/1422"
+      "start_date": "2020-10-29 19:00:00",
+      "vod": null,
+      "description": null
     },
     {
-      "start_date": "2020-10-27 19:00:00",
       "end_date": "2020-10-27 21:00:00",
-      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)",
-      "vod": "https://youtu.be/pHhoSyfNlwU"
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "start_date": "2020-10-27 19:00:00",
+      "vod": "https://youtu.be/pHhoSyfNlwU",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-10-22 18:00:00",
       "end_date": "2020-10-22 20:10:00",
-      "topic_label": "TypeScript docs generator (with fp-ts)",
       "topic_url": "https://github.com/gillchristian/docs-ts-extra/pull/5",
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "start_date": "2020-10-22 18:00:00",
+      "vod": null,
       "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)"
     },
     {
-      "start_date": "2020-10-20 18:00:00",
       "end_date": "2020-10-20 20:10:00",
-      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
       "topic_url": "https://github.com/gillchristian/parallel-concurrent",
-      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)",
-      "vod": "https://youtu.be/HZVxxxmTyYA"
+      "topic_label": "Book day: Parallel and Concurrent Programming in Haskell",
+      "start_date": "2020-10-20 18:00:00",
+      "vod": "https://youtu.be/HZVxxxmTyYA",
+      "description": "Go through the exercises of Simon Marlow's book [Parallel and Concurrent Programming in Haskell](https://simonmar.github.io/pages/pcph.html)"
     },
     {
-      "start_date": "2020-10-15 18:00:00",
       "end_date": "2020-10-15 20:00:00",
-      "topic_label": "fp-ts typeclasses in TypeScript",
       "topic_url": "https://gcanti.github.io/fp-ts/guides/HKT.html",
-      "description": "Implement [RemoteData](https://package.elm-lang.org/packages/krisajenkins/remotedata/latest/RemoteData) and other typeclasses in [fp-ts](https://gcanti.github.io/fp-ts)",
-      "vod": "https://youtu.be/9oAZXEzABXI"
+      "topic_label": "fp-ts typeclasses in TypeScript",
+      "start_date": "2020-10-15 18:00:00",
+      "vod": "https://youtu.be/9oAZXEzABXI",
+      "description": "Implement [RemoteData](https://package.elm-lang.org/packages/krisajenkins/remotedata/latest/RemoteData) and other typeclasses in [fp-ts](https://gcanti.github.io/fp-ts)"
     },
     {
-      "start_date": "2020-10-13 18:00:00",
       "end_date": "2020-10-13 20:00:00",
-      "topic_label": "TypeScript docs generator (with fp-ts)",
       "topic_url": "https://github.com/gillchristian/docs-ts-extra",
-      "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)",
-      "vod": "https://youtu.be/UzSpRabM--4"
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "start_date": "2020-10-13 18:00:00",
+      "vod": "https://youtu.be/UzSpRabM--4",
+      "description": "Continue working on my fork of [docs-ts](https://github.com/gcanti/docs-ts)"
     },
     {
-      "start_date": "2020-09-24 18:00:00",
       "end_date": "2020-09-24 20:00:00",
-      "topic_label": "Haskell, GitHub Actions and then some",
       "topic_url": "https://github.com/Bansco/webout-server",
-      "description": "Building a Haskell app with [GitHub Actions](https://github.com/features/actions) and deploy it with [Subilo](htts://subilo.io)",
-      "vod": "https://youtu.be/5L_o-UcypnU"
+      "topic_label": "Haskell, GitHub Actions and then some",
+      "start_date": "2020-09-24 18:00:00",
+      "vod": "https://youtu.be/5L_o-UcypnU",
+      "description": "Building a Haskell app with [GitHub Actions](https://github.com/features/actions) and deploy it with [Subilo](htts://subilo.io)"
     },
     {
-      "start_date": "2020-09-20 18:00:00",
       "end_date": "2020-09-20 20:00:00",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
       "topic_label": "Learning PureScript (part 5)",
-      "topic_url": "https://github.com/gillchristian/learning-purescript",
-      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
-      "vod": "https://youtu.be/6x_q6dIkGzk"
+      "start_date": "2020-09-20 18:00:00",
+      "vod": "https://youtu.be/6x_q6dIkGzk",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective"
     },
     {
-      "start_date": "2020-09-17 18:00:00",
       "end_date": "2020-09-17 20:00:00",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
       "topic_label": "Learning PureScript (part 4)",
-      "topic_url": "https://github.com/gillchristian/learning-purescript",
-      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
-      "vod": "https://youtu.be/pMTRvCYjC98"
+      "start_date": "2020-09-17 18:00:00",
+      "vod": "https://youtu.be/pMTRvCYjC98",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective"
     },
     {
-      "start_date": "2020-09-10 18:00:00",
       "end_date": "2020-09-10 20:00:00",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
       "topic_label": "Learning PureScript (part 3)",
-      "topic_url": "https://github.com/gillchristian/learning-purescript",
-      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
-      "vod": "https://youtu.be/LSOjn6KwRow"
+      "start_date": "2020-09-10 18:00:00",
+      "vod": "https://youtu.be/LSOjn6KwRow",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective"
     },
     {
-      "start_date": "2020-09-03 18:00:00",
       "end_date": "2020-09-03 20:00:00",
+      "topic_url": "https://github.com/gillchristian/learning-purescript",
       "topic_label": "Learning PureScript (part 2)",
-      "topic_url": "https://github.com/gillchristian/learning-purescript",
-      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
-      "vod": "https://youtu.be/y6qNOqlokiA"
+      "start_date": "2020-09-03 18:00:00",
+      "vod": "https://youtu.be/y6qNOqlokiA",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective"
     },
     {
-      "start_date": "2020-08-27 18:00:00",
       "end_date": "2020-08-27 20:00:00",
-      "topic_label": "Learning PureScript (part 1)",
       "topic_url": "https://github.com/gillchristian/learning-purescript",
-      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective",
-      "vod": "https://youtu.be/Yw9hkuXtqNc"
+      "topic_label": "Learning PureScript (part 1)",
+      "start_date": "2020-08-27 18:00:00",
+      "vod": "https://youtu.be/Yw9hkuXtqNc",
+      "description": "Learning [PureScript](https://www.purescript.org/) from a frontend developer and newbie haskeller perspective"
     },
     {
-      "start_date": "2020-08-20 18:00:00",
       "end_date": "2020-08-20 20:00:00",
+      "topic_url": null,
       "topic_label": "Parser combinators in ReasonML (part 2) & TypeScript v4",
+      "start_date": "2020-08-20 18:00:00",
+      "vod": null,
       "description": "Review the parser combinator \"library\" implementation from previous stream. Also check out the [new TypeScript release (v4)](https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/)"
     },
     {
-      "start_date": "2020-08-13 18:00:00",
       "end_date": "2020-08-13 20:00:00",
+      "topic_url": null,
       "topic_label": "Parser combinators in ReasonML (part 1)",
-      "description": "Implement a (simple) parser combinators library in ReasonML",
-      "vod": "https://youtu.be/OhmsTLtwLY4"
+      "start_date": "2020-08-13 18:00:00",
+      "vod": "https://youtu.be/OhmsTLtwLY4",
+      "description": "Implement a (simple) parser combinators library in ReasonML"
     },
     {
-      "start_date": "2020-08-06 18:00:00",
       "end_date": "2020-08-06 20:00:00",
-      "topic_label": "Open Source development with Rust",
       "topic_url": "https://github.com/Huemul/subilo",
-      "description": "Fixing TODOs on [Subilo](https://subilo.io) ([github.com/Huemul/subilo](https://github.com/Huemul/subilo))",
-      "vod": "https://youtu.be/7xW9HFg_nA8"
+      "topic_label": "Open Source development with Rust",
+      "start_date": "2020-08-06 18:00:00",
+      "vod": "https://youtu.be/7xW9HFg_nA8",
+      "description": "Fixing TODOs on [Subilo](https://subilo.io) ([github.com/Huemul/subilo](https://github.com/Huemul/subilo))"
     },
     {
-      "start_date": "2020-07-30 18:00:00",
       "end_date": "2020-07-30 20:00:00",
-      "topic_label": "TypeScript docs generator (with fp-ts)",
       "topic_url": "https://github.com/gillchristian/docs-ts-extra",
-      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)",
-      "vod": "https://youtu.be/Hoy8F7yUYRE"
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "start_date": "2020-07-30 18:00:00",
+      "vod": "https://youtu.be/Hoy8F7yUYRE",
+      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)"
     },
     {
-      "start_date": "2020-07-23 18:00:00",
       "end_date": "2020-07-23 20:00:00",
-      "topic_label": "TypeScript docs generator (with fp-ts)",
       "topic_url": "https://github.com/gillchristian/docs-ts-extra",
-      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)",
-      "vod": "https://youtu.be/e5P91qrdibc"
+      "topic_label": "TypeScript docs generator (with fp-ts)",
+      "start_date": "2020-07-23 18:00:00",
+      "vod": "https://youtu.be/e5P91qrdibc",
+      "description": "Fork and extend [docs-ts](https://github.com/gcanti/docs-ts)"
     }
   ],
   "future": [
     {
-      "start_date": "2021-01-26 19:00:00",
-      "topic_label": "Frontend app with PureScript Halogen"
-    },
-    {
-      "start_date": "2021-01-28 19:00:00",
-      "topic_label": "Frontend app with PureScript Halogen"
+      "topic_url": "https://github.com/gillchristian/strem/cli",
+      "topic_label": "CLI to automate my stream schedule",
+      "start_date": "2021-02-04 19:00:00"
     }
   ]
 }
