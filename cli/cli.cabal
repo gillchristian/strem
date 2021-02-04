@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: df8fe09221b97180d4b388d1f412d7864fce9888510e45ab81590e9b2cf5930b
+-- hash: e74992953b5d8e5354d611ddde77663f7d72b56483277d2916f0c17d5f45faf4
 
 name:           cli
 version:        0.1.0.0
@@ -35,6 +35,8 @@ library
       aeson
     , base >=4.7 && <5
     , bytestring
+    , directory
+    , filepath
     , lens
     , lens-aeson
     , optparse-applicative
@@ -54,6 +56,8 @@ executable strem
     , base >=4.7 && <5
     , bytestring
     , cli
+    , directory
+    , filepath
     , lens
     , lens-aeson
     , optparse-applicative
@@ -74,6 +78,8 @@ test-suite cli-test
     , base >=4.7 && <5
     , bytestring
     , cli
+    , directory
+    , filepath
     , lens
     , lens-aeson
     , optparse-applicative
