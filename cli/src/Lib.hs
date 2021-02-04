@@ -122,7 +122,8 @@ completeOpts =
 
 data AddFutureOptions = AddFutureOptions
   { addBinId :: String,
-    addNextYes :: Bool
+    addNextYes :: Bool,
+    addCopyLastFuture :: Bool
   }
   deriving (Eq, Show)
 
@@ -144,6 +145,12 @@ addFutureOpts =
           ( Opt.long "yes"
               <> Opt.short 'y'
               <> Opt.help "Do not promt confirmation before saving"
+              <> Opt.showDefault
+          )
+        <*> Opt.switch
+          ( Opt.long "copy-last"
+              <> Opt.short 'c'
+              <> Opt.help "Copy topic and description from the last event in future list"
               <> Opt.showDefault
           )
 
@@ -295,12 +302,22 @@ appendFutureEvent :: Events -> FutureEvent -> Events
 appendFutureEvent (Events future past) e = Events (future <> [e]) past
 
 addFuture :: AddFutureOptions -> String -> IO ()
-addFuture (AddFutureOptions id yes) secret = do
+addFuture (AddFutureOptions id yes copyLastFuture) secret = do
   mbEvents <- fetchEvents id
   case mbEvents of
     Nothing -> putStrLn "Could not fetch events"
     Just events -> do
-      future <- promptFutureEvent
+      future <- case (copyLastFuture, safeHead $ reverse $ future events) of
+        (True, Just e) -> do
+          putStrLn "Copying event from:"
+          printFutureEvent e *> putStrLn ""
+          start_date <- untilM (not . null) $ prompt "When will the stream start?"
+          pure $ FutureEvent start_date (future_topic e) (future_description e)
+        (True, Nothing) -> do
+          putStrLn "No future events to copy from"
+          promptFutureEvent
+        (False, _) -> promptFutureEvent
+
       let updatedEvents = appendFutureEvent events future
       when yes $ updateBin secret id updatedEvents
       unless yes $ do
