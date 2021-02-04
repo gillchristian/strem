@@ -20,6 +20,7 @@ import Options.Applicative ((<**>))
 import qualified Options.Applicative as Opt
 import System.Directory (getHomeDirectory)
 import System.FilePath ((</>))
+import System.IO (hFlush, stdout)
 
 data Topic = Topic
   { topic_url :: Maybe String,
@@ -116,7 +117,7 @@ completeOpts =
         <*> Opt.switch
           ( Opt.long "yes"
               <> Opt.short 'y'
-              <> Opt.help "Do not promt confirmation before saving"
+              <> Opt.help "Do not prompt confirmation before saving"
               <> Opt.showDefault
           )
 
@@ -144,7 +145,7 @@ addFutureOpts =
         <*> Opt.switch
           ( Opt.long "yes"
               <> Opt.short 'y'
-              <> Opt.help "Do not promt confirmation before saving"
+              <> Opt.help "Do not prompt confirmation before saving"
               <> Opt.showDefault
           )
         <*> Opt.switch
@@ -181,7 +182,7 @@ nonEmpty [] = Nothing
 nonEmpty xs = Just xs
 
 prompt :: String -> IO String
-prompt msg = putStrLn (msg <> ": ") *> getLine
+prompt msg = putStr (msg <> ": ") *> hFlush stdout *> getLine
 
 confirm :: String -> IO ()
 confirm msg = do
