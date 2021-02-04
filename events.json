@@ -1,6 +1,14 @@
 {
   "past": [
     {
+      "end_date": "2021-02-04 21:00:00",
+      "topic_url": "https://github.com/gillchristian/strem/cli",
+      "topic_label": "CLI to automate my stream schedule",
+      "start_date": "2021-02-04 19:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
       "end_date": "2021-02-02 22:00:00",
       "topic_url": "https://github.com/gillchristian/strem/cli",
       "topic_label": "CLI to automate my stream schedule",
@@ -355,9 +363,16 @@
   ],
   "future": [
     {
-      "topic_url": "https://github.com/gillchristian/strem/cli",
-      "topic_label": "CLI to automate my stream schedule",
-      "start_date": "2021-02-04 19:00:00"
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-02-09 19:00:00",
+      "description": "I'm working on a side project with [@ndelvalle](http://github.com/ndelvalle). The frontend is a PureScript Halogen app."
+    },
+    {
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-02-11 19:00:00",
+      "description": "I'm working on a side project with [@ndelvalle](http://github.com/ndelvalle). The frontend is a PureScript Halogen app."
     }
   ]
 }
