@@ -6,13 +6,14 @@
 module Lib where
 
 import Control.Lens hiding ((.=))
-import Control.Monad (unless, when)
+import Control.Monad (unless, void, when)
 import Data.Aeson ((.:), (.:?), (.=))
 import qualified Data.Aeson as Json
 import qualified Data.ByteString.Char8 as BS
 import Data.Char (isSpace)
 import Data.Foldable (traverse_)
 import Data.Maybe (fromMaybe, isJust)
+import Data.Traversable (forM)
 import GHC.Generics (Generic)
 import Network.Wreq hiding (Options)
 import Options.Applicative ((<**>))
@@ -93,8 +94,8 @@ data Events = Events
 -- --- CLI ---
 
 data CompleteNextOptions = CompleteNextOptions
-  { binId :: String,
-    nextDryRun :: Bool
+  { doneBinId :: String,
+    doneNextYes :: Bool
   }
   deriving (Eq, Show)
 
@@ -113,13 +114,42 @@ completeOpts =
               <> Opt.showDefault
           )
         <*> Opt.switch
-          ( Opt.long "dry-run"
-              <> Opt.help "Don't save the changes, only show the updated event."
+          ( Opt.long "yes"
+              <> Opt.short 'y'
+              <> Opt.help "Do not promt confirmation before saving"
               <> Opt.showDefault
           )
 
-newtype Command
+data AddFutureOptions = AddFutureOptions
+  { addBinId :: String,
+    addNextYes :: Bool
+  }
+  deriving (Eq, Show)
+
+addFutureOpts :: Opt.ParserInfo Command
+addFutureOpts =
+  AddFuture <$> Opt.info opts (Opt.progDesc desc)
+  where
+    desc = "Add a new future event"
+    opts =
+      AddFutureOptions
+        <$> Opt.strOption
+          ( Opt.long "bin-id"
+              <> Opt.short 'b'
+              <> Opt.metavar "BIN_ID"
+              <> Opt.help "JsonBIN Bin ID"
+              <> Opt.showDefault
+          )
+        <*> Opt.switch
+          ( Opt.long "yes"
+              <> Opt.short 'y'
+              <> Opt.help "Do not promt confirmation before saving"
+              <> Opt.showDefault
+          )
+
+data Command
   = CompletNext CompleteNextOptions
+  | AddFuture AddFutureOptions
   deriving (Eq, Show)
 
 newtype Options = Options {uncommand :: Command}
@@ -131,8 +161,9 @@ opts =
     (programm <**> Opt.helper)
     (Opt.fullDesc <> Opt.header "Handle my stream schedule")
   where
-    programm = Options <$> Opt.hsubparser complete
+    programm = Options <$> Opt.hsubparser (complete <> new)
     complete = Opt.command "done" completeOpts
+    new = Opt.command "new" addFutureOpts
 
 safeHead :: [a] -> Maybe a
 safeHead [] = Nothing
@@ -144,6 +175,11 @@ nonEmpty xs = Just xs
 
 prompt :: String -> IO String
 prompt msg = putStrLn (msg <> ": ") *> getLine
+
+confirm :: String -> IO ()
+confirm msg = do
+  putStrLn (msg <> " (press Enter to confirm or Ctrl + C to cancel): ")
+  void getLine
 
 promptTopic :: Maybe Topic -> IO Topic
 promptTopic Nothing = do
@@ -159,6 +195,13 @@ promptTopic (Just (Topic mbUrl label)) = do
       pure $ if isJust mbNewUrl then mbNewUrl else Just url
   pure $ Topic mbNewUrl $ fromMaybe label mbNewLabel
 
+promptMbTopic :: IO (Maybe Topic)
+promptMbTopic = do
+  mbLabel <- nonEmpty <$> prompt "What's the stream topic? (press Enter to ignore)"
+  forM mbLabel $ \label -> do
+    url <- nonEmpty <$> prompt "Topic URL? (press Enter to ignore)"
+    pure $ Topic url label
+
 untilM :: Monad m => (a -> Bool) -> m a -> m a
 untilM f ma = do
   a <- ma
@@ -172,8 +215,15 @@ futureToPast e = do
   description <- nonEmpty <$> prompt "Description (press Enter to ignore)"
   pure $ PastEvent (future_start_date e) end_date topic description Nothing
 
-updateBin :: String -> CompleteNextOptions -> Events -> IO ()
-updateBin secret (CompleteNextOptions id _) events = do
+promptFutureEvent :: IO FutureEvent
+promptFutureEvent = do
+  mbTopic <- promptMbTopic
+  description <- nonEmpty <$> prompt "Description (press Enter to ignore)"
+  start_date <- untilM (not . null) $ prompt "When will the stream start?"
+  pure $ FutureEvent start_date mbTopic description
+
+updateBin :: String -> String -> Events -> IO ()
+updateBin secret id events = do
   putStrLn "Saving events ..."
   r <- putWith reqConfg url $ Json.toJSON events
   putStrLn $ successMsg r
@@ -192,20 +242,18 @@ updateBin secret (CompleteNextOptions id _) events = do
     url = "https://api.jsonbin.io/b/" <> id
     successMsg r =
       "✓ Stream events updated ("
-        <> maybe "<no status>" show (r ^? responseStatus)
+        <> maybe "<no status>" BS.unpack (r ^? responseStatus . statusMessage)
         <> ")"
 
-fetchEvents :: CompleteNextOptions -> IO (Maybe Events)
-fetchEvents (CompleteNextOptions id _) = do
+fetchEvents :: String -> IO (Maybe Events)
+fetchEvents id = do
+  putStrLn "Fetching events ..."
   r <- asJSON =<< getWith reqConfg url
   pure $ r ^? responseBody
   where
     -- curl https://api.jsonbin.io/b/<id> -H "Accept: application/json" \
     url = "https://api.jsonbin.io/b/" <> id <> "/latest"
     reqConfg = defaults & header "Content-Type" .~ ["application/json"]
-
-dropNextAddPast :: Events -> PastEvent -> Events
-dropNextAddPast (Events future past) e = Events (tail future) $ e : past
 
 printPastEvent :: PastEvent -> IO ()
 printPastEvent e = do
@@ -215,25 +263,60 @@ printPastEvent e = do
   traverse_ putStrLn $ ("URL:         " <>) <$> topic_url (past_topic e)
   traverse_ putStrLn $ ("Description: " <>) <$> past_description e
 
-completeNext :: String -> CompleteNextOptions -> IO ()
-completeNext secret opts@(CompleteNextOptions _ dry) = do
-  mbEvents <- fetchEvents opts
+dropNextAddPast :: Events -> PastEvent -> Events
+dropNextAddPast (Events future past) e = Events (tail future) $ e : past
+
+completeNext :: CompleteNextOptions -> String -> IO ()
+completeNext (CompleteNextOptions id yes) secret = do
+  mbEvents <- fetchEvents id
   case mbEvents of
-    Nothing -> putStrLn "Could not read events"
+    Nothing -> putStrLn "Could not fetch events"
     Just events ->
       case safeHead $ future events of
         Nothing -> putStrLn "No future events found"
         Just next -> do
           toSave <- futureToPast next
           let future = dropNextAddPast events toSave
-          when dry $ putStrLn "" *> putStrLn "--- Here's what will be saved ---" *> printPastEvent toSave
-          unless dry $ updateBin secret opts future
+          when yes $ updateBin secret id future
+          unless yes $ do
+            putStrLn "\n--- Here's what will be saved ---"
+            printPastEvent toSave
+            confirm "\nSave?"
+            updateBin secret id future
+
+printFutureEvent :: FutureEvent -> IO ()
+printFutureEvent e = do
+  putStrLn $ "Started at:  " <> future_start_date e
+  traverse_ putStrLn $ ("Topic:       " <>) <$> topic_label <$> future_topic e
+  traverse_ putStrLn $ ("URL:         " <>) <$> (topic_url =<< future_topic e)
+  traverse_ putStrLn $ ("Description: " <>) <$> future_description e
+
+appendFutureEvent :: Events -> FutureEvent -> Events
+appendFutureEvent (Events future past) e = Events (future <> [e]) past
+
+addFuture :: AddFutureOptions -> String -> IO ()
+addFuture (AddFutureOptions id yes) secret = do
+  mbEvents <- fetchEvents id
+  case mbEvents of
+    Nothing -> putStrLn "Could not fetch events"
+    Just events -> do
+      future <- promptFutureEvent
+      let updatedEvents = appendFutureEvent events future
+      when yes $ updateBin secret id updatedEvents
+      unless yes $ do
+        putStrLn "\n--- Here's what will be saved ---"
+        printFutureEvent future
+        confirm "\nSave?"
+        updateBin secret id updatedEvents
+
+readSecret :: IO String
+readSecret = do
+  secretPath <- (</> ".stremsecret") <$> getHomeDirectory
+  filter (not . isSpace) <$> readFile secretPath
 
 run :: IO ()
 run = do
   cmd <- uncommand <$> Opt.execParser opts
   case cmd of
-    CompletNext opts -> do
-      secretPath <- (</> ".stremsecret") <$> getHomeDirectory
-      secret <- filter (not . isSpace) <$> readFile secretPath
-      completeNext secret opts
+    CompletNext opts -> completeNext opts =<< readSecret
+    AddFuture opts -> addFuture opts =<< readSecret
