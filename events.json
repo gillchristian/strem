@@ -1,6 +1,118 @@
 {
   "past": [
     {
+      "end_date": "2021-03-25 21:30:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-03-25 19:00:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
+      "end_date": "2021-03-23 22:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Type animation in Halogen",
+      "start_date": "2021-03-23 19:30:00",
+      "vod": null,
+      "description": "We implemented a [Typed.js](https://mattboldt.com/demos/typed-js/) like animation in Halogen for [listas.io](https://listas.io)."
+    },
+    {
+      "end_date": "2021-03-18 21:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-03-18 19:00:00",
+      "vod": null,
+      "description": "Working on [Lists](https://listas.io)"
+    },
+    {
+      "end_date": "2021-03-15 21:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-03-15 19:00:00",
+      "vod": null,
+      "description": "Working on [Lists](https://listas.io)"
+    },
+    {
+      "end_date": "2021-03-11 21:10:00",
+      "topic_url": "https://github.com/gillchristian/remote-data-ts/pull/1",
+      "topic_label": "Typeclasses in TypeScript with fp-ts",
+      "start_date": "2021-03-11 19:00:00",
+      "vod": null,
+      "description": "We discussed and implemented several [fp-ts](https://gcanti.github.io/fp-ts/) typeclass instances for [RemoteData](https://github.com/gillchristian/remote-data-ts)."
+    },
+    {
+      "end_date": "2021-03-09 21:00:00",
+      "topic_url": "https://github.com/gillchristian/coverage-viewer",
+      "topic_label": "Graphs and plots with Elm",
+      "start_date": "2021-03-09 19:00:00",
+      "vod": null,
+      "description": "We worked on displaying charts for the test coverage of different projects with Elm using [terezka/line-charts](https://terezka.github.io/line-charts/)"
+    },
+    {
+      "end_date": "2021-03-04 21:25:00",
+      "topic_url": "https://github.com/gillchristian/coverage-viewer",
+      "topic_label": "Graphs and plots with Elm",
+      "start_date": "2021-03-04 19:00:00",
+      "vod": null,
+      "description": "We worked on displaying charts for the test coverage of different projects with Elm using [terezka/line-charts](https://terezka.github.io/line-charts/)"
+    },
+    {
+      "end_date": "2021-03-02 21:20:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-purs/pull/6",
+      "topic_label": "Haskell CLI for Tailwind",
+      "start_date": "2021-03-02 19:00:00",
+      "vod": null,
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "end_date": "2021-02-25 21:10:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-purs",
+      "topic_label": "Haskell CLI for Tailwind",
+      "start_date": "2021-02-25 19:00:00",
+      "vod": null,
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "end_date": "2021-02-23 22:00:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-purs",
+      "topic_label": "Haskell CLI for Tailwind",
+      "start_date": "2021-02-23 19:00:00",
+      "vod": null,
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "end_date": "2021-02-18 20:45:00",
+      "topic_url": "https://github.com/gillchristian/tailwind-purs",
+      "topic_label": "Haskell CLI",
+      "start_date": "2021-02-18 19:00:00",
+      "vod": null,
+      "description": "Working on a CLI to optimize my workflow with Tailwind and PureScript."
+    },
+    {
+      "end_date": "2021-02-16 21:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-02-16 19:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
+      "end_date": "2021-02-11 21:15:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-02-11 19:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
+      "end_date": "2021-02-09 21:30:00",
+      "topic_url": "https://thomashoneyman.com/articles/practical-profunctor-lenses-optics",
+      "topic_label": "Learn Optics in PureScript",
+      "start_date": "2021-02-09 19:00:00",
+      "vod": null,
+      "description": "We went through [@thomashoneyman](https://twitter.com/thomashoneyman) article [Practical Profunctor Lenses & Optics In PureScript](https://thomashoneyman.com/articles/practical-profunctor-lenses-optics)"
+    },
+    {
       "end_date": "2021-02-04 21:00:00",
       "topic_url": "https://github.com/gillchristian/strem/cli",
       "topic_label": "CLI to automate my stream schedule",
@@ -365,14 +477,26 @@
     {
       "topic_url": "https://listas.io",
       "topic_label": "Frontent app with PureScript Halogen",
-      "start_date": "2021-02-09 19:00:00",
-      "description": "I'm working on a side project with [@ndelvalle](http://github.com/ndelvalle). The frontend is a PureScript Halogen app."
+      "start_date": "2021-04-13 18:00:00",
+      "description": null
     },
     {
       "topic_url": "https://listas.io",
       "topic_label": "Frontent app with PureScript Halogen",
-      "start_date": "2021-02-11 19:00:00",
-      "description": "I'm working on a side project with [@ndelvalle](http://github.com/ndelvalle). The frontend is a PureScript Halogen app."
+      "start_date": "2021-04-15 18:00:00",
+      "description": null
+    },
+    {
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-04-20 18:00:00",
+      "description": null
+    },
+    {
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts",
+      "start_date": "2021-04-22 18:00:00",
+      "description": "Go through the [Fantas, Eel, and Specification](http://www.tomharding.me/fantasy-land/) series and implementing the exercises in [fp-ts](https://gcanti.github.io/fp-ts/)."
     }
   ]
 }
