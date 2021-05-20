@@ -1,0 +1,72 @@
+name:                gifs
+version:             0.1.0.0
+github:              "githubuser/gifs"
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2021 Author name here"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/githubuser/gifs#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- bson
+- bytestring
+- casing
+- conduit
+- containers
+- fast-logger
+- hashable
+- http-client
+- http-media
+- http-types
+- katip
+- monad-control
+- monad-logger
+- mtl
+- network-uri
+- random
+- safe
+- servant
+- servant-server
+- servant-websockets
+- stm
+- text
+- time
+- transformers
+- unordered-containers
+- uuid
+- wai
+- wai-cors
+- wai-extra
+- warp
+- websockets
+- wreq
+
+library:
+  source-dirs: src
+
+executables:
+  gifs-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gifs
+
+tests:
+  gifs-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - gifs
