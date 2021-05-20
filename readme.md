@@ -26,3 +26,9 @@ To see how these two play together check out [streamdeck](/streamdeck).
 ### [streamdeck](/streamdeck)
 
 The configurations for my [Stream Deck](https://www.elgato.com/en/stream-deck).
+
+### [chat](/chat)
+
+The styles for the
+[Streamlabs Chat Box widget](https://streamlabs.com/obs-widgets/chat-box) of the
+stream.
