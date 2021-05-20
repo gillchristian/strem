@@ -1,6 +1,102 @@
 {
   "past": [
     {
+      "end_date": "2021-05-20 20:00:00",
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts",
+      "start_date": "2021-05-20 18:00:00",
+      "vod": null,
+      "description": "We went through the [Contravariant](http://www.tomharding.me/2017/04/03/fantas-eel-and-specification-7/) article"
+    },
+    {
+      "end_date": "2021-05-19 20:45:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontend with Halogen",
+      "start_date": "2021-05-19 18:45:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
+      "end_date": "2021-05-13 19:30:00",
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts",
+      "start_date": "2021-05-13 18:00:00",
+      "vod": null,
+      "description": "We went through what typeclasses are and the [Functor](http://www.tomharding.me/2017/03/27/fantas-eel-and-specification-6/) article"
+    },
+    {
+      "end_date": "2021-05-12 20:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontend with Halogen",
+      "start_date": "2021-05-12 18:00:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
+      "end_date": "2021-05-06 20:40:00",
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts",
+      "start_date": "2021-05-06 18:00:00",
+      "vod": null,
+      "description": "We went through the [Semigroup](http://www.tomharding.me/2017/03/13/fantas-eel-and-specification-4/) and [Monoid](http://www.tomharding.me/2017/03/21/fantas-eel-and-specification-5/) articles."
+    },
+    {
+      "end_date": "2021-05-04 21:30:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-05-04 18:00:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
+      "end_date": "2021-04-29 20:00:00",
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts",
+      "start_date": "2021-04-29 18:00:00",
+      "vod": null,
+      "description": "Went through the [Eq/Setoid](http://www.tomharding.me/2017/03/09/fantas-eel-and-specification-3/) and [Ord](http://www.tomharding.me/2017/04/09/fantas-eel-and-specification-3.5/) articles."
+    },
+    {
+      "end_date": "2021-04-27 20:20:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Websockets with Haskell",
+      "start_date": "2021-04-27 18:00:00",
+      "vod": null,
+      "description": null
+    },
+    {
+      "end_date": "2021-04-22 20:00:00",
+      "topic_url": "http://www.tomharding.me/fantasy-land/",
+      "topic_label": "Fantas, Eel, and Specification in fp-ts #1",
+      "start_date": "2021-04-22 18:00:00",
+      "vod": null,
+      "description": "Started with the series. We went through the first two articles: [Daggy](http://www.tomharding.me/2017/03/03/fantas-eel-and-specification/) and [Type signatures](http://www.tomharding.me/2017/03/08/fantas-eel-and-specification-2/)."
+    },
+    {
+      "end_date": "2021-04-20 20:00:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-04-20 18:00:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
+      "end_date": "2021-04-15 21:45:00",
+      "topic_url": "https://coverage-viewer.vercel.app/",
+      "topic_label": "Parsing CSV with Elm",
+      "start_date": "2021-04-15 18:00:00",
+      "vod": null,
+      "description": "Worked on parsing CSV files as the input for the coverage reports."
+    },
+    {
+      "end_date": "2021-04-13 20:15:00",
+      "topic_url": "https://listas.io",
+      "topic_label": "Frontent app with PureScript Halogen",
+      "start_date": "2021-04-13 18:00:00",
+      "vod": null,
+      "description": "Working on [Listas](https://listas.io)"
+    },
+    {
       "end_date": "2021-03-25 21:30:00",
       "topic_url": "https://listas.io",
       "topic_label": "Frontent app with PureScript Halogen",
@@ -476,27 +572,15 @@
   "future": [
     {
       "topic_url": "https://listas.io",
-      "topic_label": "Frontent app with PureScript Halogen",
-      "start_date": "2021-04-13 18:00:00",
-      "description": null
-    },
-    {
-      "topic_url": "https://listas.io",
-      "topic_label": "Frontent app with PureScript Halogen",
-      "start_date": "2021-04-15 18:00:00",
-      "description": null
-    },
-    {
-      "topic_url": "https://listas.io",
-      "topic_label": "Frontent app with PureScript Halogen",
-      "start_date": "2021-04-20 18:00:00",
-      "description": null
+      "topic_label": "Frontend with Halogen",
+      "start_date": "2021-05-25 18:00:00",
+      "description": "Working on [Listas](https://listas.io]"
     },
     {
       "topic_url": "http://www.tomharding.me/fantasy-land/",
       "topic_label": "Fantas, Eel, and Specification in fp-ts",
-      "start_date": "2021-04-22 18:00:00",
-      "description": "Go through the [Fantas, Eel, and Specification](http://www.tomharding.me/fantasy-land/) series and implementing the exercises in [fp-ts](https://gcanti.github.io/fp-ts/)."
+      "start_date": "2021-05-27 18:00:00",
+      "description": "We will go through the [Apply](http://www.tomharding.me/2017/04/10/fantas-eel-and-specification-8/) article"
     }
   ]
 }
