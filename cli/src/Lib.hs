@@ -185,29 +185,30 @@ prompt :: String -> IO String
 prompt msg = putStr (msg <> ": ") *> hFlush stdout *> getLine
 
 confirm :: String -> IO ()
-confirm msg = do
-  putStrLn (msg <> " (press Enter to confirm or Ctrl + C to cancel): ")
-  void getLine
+confirm msg =
+  void $ prompt (msg <> " (press Enter to confirm or Ctrl + C to cancel)")
+
+promptOptional :: Maybe String -> String -> IO (Maybe String)
+promptOptional Nothing msg =
+  nonEmpty <$> prompt (msg <> " (press Enter to ignore)")
+promptOptional (Just prev) msg =
+  Just . fromMaybe prev . nonEmpty <$> prompt (msg <> " (current: '" <> prev <> "', press Enter to use it)")
 
 promptTopic :: Maybe Topic -> IO Topic
 promptTopic Nothing = do
   label <- prompt "What's the stream topic?"
-  url <- nonEmpty <$> prompt "Topic URL? (press Enter to ignore)"
+  url <- promptOptional Nothing "Topic URL?"
   pure $ Topic url label
 promptTopic (Just (Topic mbUrl label)) = do
-  mbNewLabel <- nonEmpty <$> prompt ("New topic? (current: '" <> label <> "', press Enter to ignore)")
-  mbNewUrl <- case mbUrl of
-    Nothing -> nonEmpty <$> prompt "Topic URL? (press Enter to ignore)"
-    Just url -> do
-      mbNewUrl <- nonEmpty <$> prompt ("New Topic URL? (current: '" <> url <> "', press Enter to ignore)")
-      pure $ if isJust mbNewUrl then mbNewUrl else Just url
+  mbNewLabel <- promptOptional (Just label) "New topic?"
+  mbNewUrl <- promptOptional mbUrl "Topic URL?"
   pure $ Topic mbNewUrl $ fromMaybe label mbNewLabel
 
 promptMbTopic :: IO (Maybe Topic)
 promptMbTopic = do
-  mbLabel <- nonEmpty <$> prompt "What's the stream topic? (press Enter to ignore)"
+  mbLabel <- promptOptional Nothing "What's the stream topic?"
   forM mbLabel $ \label -> do
-    url <- nonEmpty <$> prompt "Topic URL? (press Enter to ignore)"
+    url <- promptOptional Nothing "Topic URL? (press Enter to ignore)"
     pure $ Topic url label
 
 untilM :: Monad m => (a -> Bool) -> m a -> m a
@@ -220,13 +221,13 @@ futureToPast e = do
   topic <- promptTopic $ future_topic e
   -- TODO: add now
   end_date <- untilM (not . null) $ prompt $ "When did the stream end? (started at: " <> future_start_date e <> ")"
-  description <- nonEmpty <$> prompt "Description (press Enter to ignore)"
+  description <- promptOptional (future_description e) "Description?"
   pure $ PastEvent (future_start_date e) end_date topic description Nothing
 
 promptFutureEvent :: IO FutureEvent
 promptFutureEvent = do
   mbTopic <- promptMbTopic
-  description <- nonEmpty <$> prompt "Description (press Enter to ignore)"
+  description <- promptOptional Nothing "Description?"
   start_date <- untilM (not . null) $ prompt "When will the stream start?"
   pure $ FutureEvent start_date mbTopic description
 
@@ -271,6 +272,13 @@ printPastEvent e = do
   traverse_ putStrLn $ ("URL:         " <>) <$> topic_url (past_topic e)
   traverse_ putStrLn $ ("Description: " <>) <$> past_description e
 
+printFutureEvent :: FutureEvent -> IO ()
+printFutureEvent e = do
+  putStrLn $ "Starts at:   " <> future_start_date e
+  traverse_ putStrLn $ ("Topic:       " <>) . topic_label <$> future_topic e
+  traverse_ putStrLn $ ("URL:         " <>) <$> (topic_url =<< future_topic e)
+  traverse_ putStrLn $ ("Description: " <>) <$> future_description e
+
 dropNextAddPast :: Events -> PastEvent -> Events
 dropNextAddPast (Events future past) e = Events (tail future) $ e : past
 
@@ -291,13 +299,6 @@ completeNext (CompleteNextOptions id yes) secret = do
             printPastEvent toSave
             confirm "\nSave?"
             updateBin secret id future
-
-printFutureEvent :: FutureEvent -> IO ()
-printFutureEvent e = do
-  putStrLn $ "Started at:  " <> future_start_date e
-  traverse_ putStrLn $ ("Topic:       " <>) <$> topic_label <$> future_topic e
-  traverse_ putStrLn $ ("URL:         " <>) <$> (topic_url =<< future_topic e)
-  traverse_ putStrLn $ ("Description: " <>) <$> future_description e
 
 appendFutureEvent :: Events -> FutureEvent -> Events
 appendFutureEvent (Events future past) e = Events (future <> [e]) past
