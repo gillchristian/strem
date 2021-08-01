@@ -22,11 +22,11 @@ import Control.Monad.Reader
     ReaderT,
     asks,
   )
-import Data.Text (Text)
 import Logger
 import Network.Wai (Middleware)
 import Network.Wai.Handler.Warp (Port)
 import Network.Wai.Middleware.RequestLogger (logStdout, logStdoutDev)
+import qualified Network.WebSockets as Ws
 import Servant.Server (ServerError)
 import Prelude
 
@@ -54,8 +54,8 @@ data Config = Config
   { configPort :: Port,
     configEnv :: Environment,
     configLogEnv :: LogEnv,
-    configClientUrl :: Text,
-    configChannel :: STM.TVar Channel
+    configOverlayChannel :: STM.TVar Channel,
+    configObsWsClient :: Ws.Connection
   }
 
 data Environment

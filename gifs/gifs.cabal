@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ea574a7641fb06f3fcb1e94fe887ae170e71e9f70bf1ead5973af285c86710e2
+-- hash: d6de580d13d2ae3c87e6bdf4e9ff7b0084e19a2450e3a6bfe0bdd920b2215bba
 
 name:           gifs
 version:        0.1.0.0
@@ -39,11 +39,13 @@ library
   build-depends:
       aeson
     , base >=4.7 && <5
+    , base64
     , bson
     , bytestring
     , casing
     , conduit
     , containers
+    , cryptohash-sha256
     , fast-logger
     , hashable
     , http-client
@@ -83,11 +85,13 @@ executable gifs-exe
   build-depends:
       aeson
     , base >=4.7 && <5
+    , base64
     , bson
     , bytestring
     , casing
     , conduit
     , containers
+    , cryptohash-sha256
     , fast-logger
     , gifs
     , hashable
@@ -129,11 +133,13 @@ test-suite gifs-test
   build-depends:
       aeson
     , base >=4.7 && <5
+    , base64
     , bson
     , bytestring
     , casing
     , conduit
     , containers
+    , cryptohash-sha256
     , fast-logger
     , gifs
     , hashable
