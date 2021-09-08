@@ -32,6 +32,7 @@ import Data.Text (Text)
 import Data.Text.Encoding (decodeUtf8)
 import qualified General.Websockets as Ws
 import qualified Network.WebSockets as Ws
+import Obs (mkObsWsMsg)
 import Servant ((:<|>) (..), (:>))
 import qualified Servant
 import Servant.API.WebSocket (WebSocketPending)
@@ -51,11 +52,6 @@ gifsServer = gifsWsHandler :<|> messageHandler
 
 gifsApi :: Servant.Proxy GifsAPI
 gifsApi = Servant.Proxy
-
-mkObsWsMsg :: String -> [Json.Pair] -> LazyBS.ByteString
-mkObsWsMsg type' fields =
-  Json.encode $
-    Json.object (["request-type" .= type', "message-id" .= type'] <> fields)
 
 messageHandler :: MonadIO m => Message -> AppT m ()
 messageHandler (Scene name) = do

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d6de580d13d2ae3c87e6bdf4e9ff7b0084e19a2450e3a6bfe0bdd920b2215bba
+-- hash: a0f9bca59a71b709f3d47bde39a608ad8446b900a6ef465ff3db8c694817da45
 
 name:           gifs
 version:        0.1.0.0
@@ -32,6 +32,8 @@ library
       General.Websockets
       Init
       Logger
+      Obs
+      System.Environment.Extra
   other-modules:
       Paths_gifs
   hs-source-dirs:
