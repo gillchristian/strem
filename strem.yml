@@ -1,0 +1,9 @@
+scenes:
+  main: "Screen: Main"
+  soon: "Screen: Soon"
+  break_screen: "Screen: Break"
+  private: "Screen: Private"
+  done_screen: "Screen: Done"
+  host-guest-call: "Screen: Host & Guest"
+  pairing-host: "Screen: Pair programming (host screen)"
+  pairing-guest: "Screen: Pair programming (guest screen)"

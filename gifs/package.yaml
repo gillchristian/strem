@@ -20,7 +20,9 @@ dependencies:
 - conduit
 - containers
 - cryptohash-sha256
+- directory
 - fast-logger
+- filepath
 - hashable
 - http-client
 - http-media
@@ -47,6 +49,7 @@ dependencies:
 - warp
 - websockets
 - wreq
+- yaml
 
 library:
   source-dirs: src

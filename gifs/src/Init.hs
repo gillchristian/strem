@@ -1,5 +1,7 @@
+{-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE TypeApplications #-}
 
 module Init
   ( runApp,
@@ -11,18 +13,23 @@ import Api.Gifs.Models (Channel (..))
 import Config
   ( Config (..),
     Environment (..),
+    StremConfig (..),
     setLogger,
   )
 import Control.Concurrent.STM as STM
 import qualified Data.IntMap as IM
+import qualified Data.Map as Map
 import qualified Data.Text as Text
+import qualified Data.Yaml as Yaml
 import Logger (defaultLogEnv)
 import qualified Network.Wai as Wai
 import Network.Wai.Handler.Warp (run)
 import Network.Wai.Middleware.Cors (CorsResourcePolicy (..), cors)
 import qualified Network.WebSockets as Ws
 import Obs (connectToObsWs)
+import System.Directory (getHomeDirectory)
 import System.Environment.Extra (lookupSetting)
+import System.FilePath ((</>))
 import Prelude
 
 runApp :: IO ()
@@ -50,13 +57,15 @@ acquireConfig client = do
   env <- lookupSetting "ENV" Development
   logEnv <- defaultLogEnv
   channel <- STM.atomically $ STM.newTVar . Channel IM.empty =<< STM.newTVar 0
+  stremConfig <- Yaml.decodeFileEither @StremConfig =<< (</> ".strem.yml") <$> getHomeDirectory
   pure
     Config
       { configPort = port,
         configEnv = env,
         configLogEnv = logEnv,
         configOverlayChannel = channel,
-        configObsWsClient = client
+        configObsWsClient = client,
+        configScenes = either (const Map.empty) stremScenes stremConfig
       }
 
 corsified :: Wai.Middleware

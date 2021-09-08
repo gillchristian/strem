@@ -24,10 +24,10 @@ import Control.Monad.IO.Class (MonadIO, liftIO)
 import Control.Monad.Reader (asks)
 import Data.Aeson ((.=))
 import qualified Data.Aeson as Json
-import qualified Data.Aeson.Types as Json
 import Data.ByteString.Lazy (toStrict)
-import qualified Data.ByteString.Lazy.Char8 as LazyBS
 import qualified Data.IntMap as IM
+import qualified Data.Map as Map
+import Data.Maybe (fromMaybe)
 import Data.Text (Text)
 import Data.Text.Encoding (decodeUtf8)
 import qualified General.Websockets as Ws
@@ -54,7 +54,10 @@ gifsApi :: Servant.Proxy GifsAPI
 gifsApi = Servant.Proxy
 
 messageHandler :: MonadIO m => Message -> AppT m ()
-messageHandler (Scene name) = do
+messageHandler (Scene sceneAlias) = do
+  scenes <- asks configScenes
+  let name = fromMaybe sceneAlias $ Map.lookup sceneAlias scenes
+
   liftIO $ putStrLn $ "Attempting to switch scene to: " <> name
   client <- asks configObsWsClient
   liftIO $ Ws.sendTextData client $ mkObsWsMsg "SetCurrentScene" ["scene-name" .= name]

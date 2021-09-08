@@ -1,3 +1,5 @@
+{-# LANGUAGE DeriveGeneric #-}
+{-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses #-}
@@ -8,6 +10,7 @@ module Config
     App,
     Config (..),
     Environment (..),
+    StremConfig (..),
     setLogger,
   )
 where
@@ -22,6 +25,10 @@ import Control.Monad.Reader
     ReaderT,
     asks,
   )
+import qualified Data.Aeson as Json
+import Data.Map (Map)
+import GHC.Generics (Generic)
+import General.Util (dropLabelPrefix)
 import Logger
 import Network.Wai (Middleware)
 import Network.Wai.Handler.Warp (Port)
@@ -50,12 +57,22 @@ instance MonadIO m => Katip (AppT m) where
 instance MonadIO m => MonadLogger (AppT m) where
   monadLoggerLog = adapt logMsg
 
+newtype StremConfig = StremConfig {stremScenes :: Map String String}
+  deriving stock (Show, Generic)
+
+instance Json.ToJSON StremConfig where
+  toJSON = Json.genericToJSON $ dropLabelPrefix "strem"
+
+instance Json.FromJSON StremConfig where
+  parseJSON = Json.genericParseJSON $ dropLabelPrefix "strem"
+
 data Config = Config
   { configPort :: Port,
     configEnv :: Environment,
     configLogEnv :: LogEnv,
     configOverlayChannel :: STM.TVar Channel,
-    configObsWsClient :: Ws.Connection
+    configObsWsClient :: Ws.Connection,
+    configScenes :: Map String String
   }
 
 data Environment
