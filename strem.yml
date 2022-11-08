@@ -3,6 +3,7 @@ scenes:
   soon: "Screen: Soon"
   break_screen: "Screen: Break"
   private: "Screen: Private"
+  camera: "Screen: Camera"
   done_screen: "Screen: Done"
   host-guest-call: "Screen: Host & Guest"
   pairing-host: "Screen: Pair programming (host screen)"
