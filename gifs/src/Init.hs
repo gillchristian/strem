@@ -1,4 +1,7 @@
+{-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ScopedTypeVariables #-}
+{-# LANGUAGE TypeApplications #-}
 
 module Init
   ( runApp,
@@ -10,28 +13,34 @@ import Api.Gifs.Models (Channel (..))
 import Config
   ( Config (..),
     Environment (..),
+    StremConfig (..),
     setLogger,
   )
-import Control.Concurrent (killThread)
 import Control.Concurrent.STM as STM
-import Control.Exception (bracket)
-import Control.Monad (void)
-import qualified Data.ByteString.Char8 as BS
-import Data.HashMap.Strict as HM hiding (null)
 import qualified Data.IntMap as IM
-import Data.Text.Encoding (encodeUtf8)
+import qualified Data.Map as Map
+import qualified Data.Text as Text
+import qualified Data.Yaml as Yaml
 import Logger (defaultLogEnv)
-import Network.HTTP.Types.Status (status302)
 import qualified Network.Wai as Wai
 import Network.Wai.Handler.Warp (run)
 import Network.Wai.Middleware.Cors (CorsResourcePolicy (..), cors)
-import Safe (readMay)
-import System.Environment (lookupEnv)
+import qualified Network.WebSockets as Ws
+import Obs (connectToObsWs)
+import System.Directory (getHomeDirectory)
+import System.Environment.Extra (lookupSetting)
+import System.FilePath ((</>))
 import Prelude
 
 runApp :: IO ()
 runApp =
-  runApp' =<< acquireConfig
+  Ws.runClient "localhost" 4444 "/" $ \client -> do
+    connectToObsWs client
+
+    runApp' =<< acquireConfig client
+
+    -- TODO: use bracket instead ? Or intercept kill signal ?
+    Ws.sendClose client (Text.pack "Bye!")
   where
     runApp' config = run (configPort config) =<< initialize config
 
@@ -42,34 +51,22 @@ initialize cfg = do
   pure . setLogger (configEnv cfg) . corsified . app $ cfg
 
 -- | Allocates resources for 'Config'
-acquireConfig :: IO Config
-acquireConfig = do
+acquireConfig :: Ws.Connection -> IO Config
+acquireConfig client = do
   port <- lookupSetting "PORT" 9000
   env <- lookupSetting "ENV" Development
   logEnv <- defaultLogEnv
-  clientUrl <- lookupSetting "CLIENT_URL" "http://localhost:9000"
   channel <- STM.atomically $ STM.newTVar . Channel IM.empty =<< STM.newTVar 0
+  stremConfig <- Yaml.decodeFileEither @StremConfig =<< (</> ".strem.yml") <$> getHomeDirectory
   pure
     Config
       { configPort = port,
         configEnv = env,
         configLogEnv = logEnv,
-        configClientUrl = clientUrl,
-        configChannel = channel
+        configOverlayChannel = channel,
+        configObsWsClient = client,
+        configScenes = either (const Map.empty) stremScenes stremConfig
       }
-
--- | Looks up a setting in the environment, with a provided default, and
--- 'read's that information into the inferred type.
-lookupSetting :: Read a => String -> a -> IO a
-lookupSetting env def = do
-  maybeValue <- lookupEnv env
-  case maybeValue of
-    Nothing ->
-      pure def
-    Just str ->
-      maybe (error $ failMsg str) pure (readMay str)
-  where
-    failMsg str = mconcat ["Failed to read [[", str, "]] for environment variable ", env]
 
 corsified :: Wai.Middleware
 corsified = cors (const $ Just corsResourcePolicy)

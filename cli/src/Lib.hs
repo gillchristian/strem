@@ -231,6 +231,9 @@ promptFutureEvent = do
   start_date <- untilM (not . null) $ prompt "When will the stream start?"
   pure $ FutureEvent start_date mbTopic description
 
+jsonbinBaseUrl :: String
+jsonbinBaseUrl = "https://api.jsonbin.io/v3"
+
 updateBin :: String -> String -> Events -> IO ()
 updateBin secret id events = do
   putStrLn "Saving events ..."
@@ -246,23 +249,27 @@ updateBin secret id events = do
     reqConfg =
       defaults
         & header "Content-Type" .~ ["application/json"]
-        & header "secret-key" .~ [BS.pack secret]
-        & header "versioning" .~ ["false"]
-    url = "https://api.jsonbin.io/b/" <> id
+        & header "X-Master-Key" .~ [BS.pack secret]
+        & header "X-Bin-Versioning" .~ ["false"]
+    url = jsonbinBaseUrl <> "/b/" <> id
     successMsg r =
       "✓ Stream events updated ("
         <> maybe "<no status>" BS.unpack (r ^? responseStatus . statusMessage)
         <> ")"
 
-fetchEvents :: String -> IO (Maybe Events)
-fetchEvents id = do
+fetchEvents :: String -> String -> IO (Maybe Events)
+fetchEvents secret id = do
   putStrLn "Fetching events ..."
   r <- asJSON =<< getWith reqConfg url
   pure $ r ^? responseBody
   where
     -- curl https://api.jsonbin.io/b/<id> -H "Accept: application/json" \
-    url = "https://api.jsonbin.io/b/" <> id <> "/latest"
-    reqConfg = defaults & header "Content-Type" .~ ["application/json"]
+    url = jsonbinBaseUrl <> "/b/" <> id <> "/latest"
+    reqConfg =
+      defaults
+        & header "Content-Type" .~ ["application/json"]
+        & header "X-Master-Key" .~ [BS.pack secret]
+        & header "X-Bin-Meta" .~ ["false"]
 
 printPastEvent :: PastEvent -> IO ()
 printPastEvent e = do
@@ -284,7 +291,7 @@ dropNextAddPast (Events future past) e = Events (tail future) $ e : past
 
 completeNext :: CompleteNextOptions -> String -> IO ()
 completeNext (CompleteNextOptions id yes) secret = do
-  mbEvents <- fetchEvents id
+  mbEvents <- fetchEvents secret id
   case mbEvents of
     Nothing -> putStrLn "Could not fetch events"
     Just events ->
@@ -305,7 +312,7 @@ appendFutureEvent (Events future past) e = Events (future <> [e]) past
 
 addFuture :: AddFutureOptions -> String -> IO ()
 addFuture (AddFutureOptions id yes copyLastFuture) secret = do
-  mbEvents <- fetchEvents id
+  mbEvents <- fetchEvents secret id
   case mbEvents of
     Nothing -> putStrLn "Could not fetch events"
     Just events -> do

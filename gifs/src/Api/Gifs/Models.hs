@@ -14,18 +14,15 @@ where
 
 import qualified Control.Concurrent.STM as STM
 import qualified Data.Aeson as Json
-import Data.Either (Either (..))
 import qualified Data.IntMap as IM
 import GHC.Generics
-import General.Util (dropLabelPrefix)
 import qualified Network.WebSockets.Connection as Ws
-import Text.Casing (camel)
 import Prelude
 
 data Message
-  = Message
-  | Gif {gif :: String}
+  = Gif {gif :: String}
   | Audio {audio :: String}
+  | Scene {scene :: String}
   deriving stock (Generic, Show)
   deriving (Json.ToJSON, Json.FromJSON)
 

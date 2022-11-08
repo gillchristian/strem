@@ -22,13 +22,17 @@ import qualified Control.Exception as Exception
 import qualified Control.Monad as Monad
 import Control.Monad.IO.Class (MonadIO, liftIO)
 import Control.Monad.Reader (asks)
+import Data.Aeson ((.=))
 import qualified Data.Aeson as Json
 import Data.ByteString.Lazy (toStrict)
 import qualified Data.IntMap as IM
+import qualified Data.Map as Map
+import Data.Maybe (fromMaybe)
 import Data.Text (Text)
 import Data.Text.Encoding (decodeUtf8)
 import qualified General.Websockets as Ws
 import qualified Network.WebSockets as Ws
+import Obs (mkObsWsMsg)
 import Servant ((:<|>) (..), (:>))
 import qualified Servant
 import Servant.API.WebSocket (WebSocketPending)
@@ -50,8 +54,16 @@ gifsApi :: Servant.Proxy GifsAPI
 gifsApi = Servant.Proxy
 
 messageHandler :: MonadIO m => Message -> AppT m ()
+messageHandler (Scene sceneAlias) = do
+  scenes <- asks configScenes
+  let name = fromMaybe sceneAlias $ Map.lookup sceneAlias scenes
+
+  liftIO $ putStrLn $ "Attempting to switch scene to: " <> name
+  client <- asks configObsWsClient
+  liftIO $ Ws.sendTextData client $ mkObsWsMsg "SetCurrentScene" ["scene-name" .= name]
+  pure ()
 messageHandler msg = do
-  channel <- asks configChannel
+  channel <- asks configOverlayChannel
   liftIO $ broadcast channel $ decodeUtf8 $ toStrict $ Json.encode msg
   pure ()
 
@@ -59,7 +71,7 @@ messageHandler msg = do
 gifsWsHandler :: MonadIO m => Ws.PendingConnection -> AppT m ()
 gifsWsHandler pendingC = do
   c <- liftIO $ Ws.acceptRequest pendingC
-  channel <- asks configChannel
+  channel <- asks configOverlayChannel
 
   listenerId <- liftIO $
     STM.atomically $ do

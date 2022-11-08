@@ -30,7 +30,9 @@ convertApp :: Config -> AppT IO a -> Handler a
 convertApp cfg appt = Handler $ runReaderT (runApp appt) cfg
 
 -- TODO: change paths
-type AppAPI = HealthzRoute :<|> "gifs" :> GifsAPI
+type AppAPI =
+  HealthzRoute
+    :<|> "gifs" :> GifsAPI
 
 healthzHandler :: MonadIO m => AppT m Text
 healthzHandler = pure "200 Ok"
